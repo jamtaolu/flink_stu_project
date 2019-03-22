@@ -1,4 +1,4 @@
-package com.taolu.flink
+package com.taolu.flink.business
 
 import org.apache.flink.streaming.api.scala._
 

@@ -1,7 +1,10 @@
 package com.taolu.flink.pojo;
 
-public class UserBehavior {
+import java.io.Serializable;
 
+public class UserBehavior implements Serializable {
+
+    private static final long serialVersionUID = 1195768126960875307L;
     private long userId;
 
     private long itemId;

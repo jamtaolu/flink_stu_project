@@ -16,25 +16,26 @@
  * limitations under the License.
  */
 
-package com.taolu.flink
+package com.taolu.flink.simple
 
-import org.apache.flink.api.scala._
+import org.apache.flink.streaming.api.scala._
 
 /**
- * Skeleton for a Flink Batch Job.
+ * Skeleton for a Flink Streaming Job.
  *
- * For a tutorial how to write a Flink batch application, check the
+ * For a tutorial how to write a Flink streaming application, check the
  * tutorials and examples on the <a href="http://flink.apache.org/docs/stable/">Flink Website</a>.
  *
- * To package your application into a JAR file for execution,
- * change the main class in the POM.xml file to this class (simply search for 'mainClass')
- * and run 'mvn clean package' on the command line.
+ * To package your application into a JAR file for execution, run
+ * 'mvn clean package' on the command line.
+ *
+ * If you change the name of the main class (with the public static void main(String[] args))
+ * method, change the respective entry in the POM.xml file (simply search for 'mainClass').
  */
-object BatchJob {
-
+object StreamingJob {
   def main(args: Array[String]) {
-    // set up the batch execution environment
-    val env = ExecutionEnvironment.getExecutionEnvironment
+    // set up the streaming execution environment
+    val env = StreamExecutionEnvironment.getExecutionEnvironment
 
     /*
      * Here, you can start creating your execution plan for Flink.
@@ -42,7 +43,7 @@ object BatchJob {
      * Start with getting some data from the environment, like
      *  env.readTextFile(textPath);
      *
-     * then, transform the resulting DataSet[String] using operations
+     * then, transform the resulting DataStream[String] using operations
      * like
      *   .filter()
      *   .flatMap()
@@ -52,15 +53,11 @@ object BatchJob {
      * and many more.
      * Have a look at the programming guide:
      *
-     * http://flink.apache.org/docs/latest/apis/batch/index.html
-     *
-     * and the examples
-     *
-     * http://flink.apache.org/docs/latest/apis/batch/examples.html
+     * http://flink.apache.org/docs/latest/apis/streaming/index.html
      *
      */
 
     // execute program
-    env.execute("Flink Batch Scala API Skeleton")
+    env.execute("Flink Streaming Scala API Skeleton")
   }
 }
